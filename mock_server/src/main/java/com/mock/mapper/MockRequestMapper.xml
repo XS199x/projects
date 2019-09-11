@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mock.dao.MockRequestMapper">
+
+    <select id="getMockRequestByRouteUrl" resultType="com.mock.entity.MockInterfaceData">
+        SELECT
+        id,name,description,routeurl as routeUrl,
+        requestdetail as requestDetail,enabledstatus as enabledStatus
+        FROM
+        mock_server_interface
+        WHERE
+        routeurl = #{routeUrl}
+    </select>
+
+    <insert id="insertMockRequest">
+        insert into mock_server_interface (name,description,routeurl,requestdetail)
+        values (#{name},#{description}, #{routeUrl}, #{requestDetail})
+    </insert>
+
+    <select id="getMockRequestList" resultType="com.mock.entity.MockInterfaceData">
+        SELECT * FROM mock_server_interface
+    </select>
+
+    <update id="updateMockRequest" parameterType="MockRequest">
+        UPDATE mock_server_interface
+        SET
+        name= #{name},
+        description = #{description},
+        routeurl = #{routeUrl},
+        requestdetail = #{requestDetail},
+        enabledstatus = #{enabledStatus}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="deleteMockRequest" parameterType="int">
+        DELETE FROM mock_server_interface WHERE id = #{id}
+    </delete>
+
+</mapper>
