@@ -1,17 +1,25 @@
 package com.xuf.controller;
 
-import org.springframework.stereotype.Component;
+import com.xuf.aop.LogAspect;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/hello")
 public class HelloController {
-	@RequestMapping(method = RequestMethod.GET)
-	public String printHello(ModelMap model) {
-		model.addAttribute("message", "Hello Spring MVC Framework!");
+	
+	@RequestMapping("/hello")
+	@ResponseBody
+	public String printHello() {
 		return "hello";
+	}
+	
+	@RequestMapping("/helloMvc")
+	public ModelAndView handleRequest(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse) throws Exception {
+		ModelAndView mav = new ModelAndView("index.jsp");
+		mav.addObject("message", "Hello Spring MVC");
+		return mav;
 	}
 }
