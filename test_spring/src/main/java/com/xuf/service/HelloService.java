@@ -1,5 +1,6 @@
 package com.xuf.service;
 
+import com.xuf.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,5 +14,7 @@ public class HelloService {
 	
 	public void sayHello(){
 		System.out.println("hello"+personService.getName());
+		
+		FileUtil.pdf2png("C:\\Users\\xufan\\Desktop","Python3简明教程(中文版)","png");
 	}
 }

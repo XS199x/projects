@@ -20,7 +20,7 @@
 
     <!-- Welcome -->
     <welcome-file-list>
-        <welcome-file>/index.html</welcome-file>
+        <welcome-file>/WEB-INF/static/index.html</welcome-file>
     </welcome-file-list>
 
 

@@ -1,0 +1,11 @@
+As a special feature, redirect URLs can be specified via the "redirect:" prefix.
+E.g.: "redirect:myAction.do" will trigger a redirect to the given URL,
+rather than resolution as standard view name.
+This is typically used for redirecting to a controller URL after finishing a form workflow.
+
+Furthermore, forward URLs can be specified via the "forward:" prefix.
+E.g.: "forward:myAction.do" will trigger a forward to the given URL,
+rather than resolution as standard view name.
+This is typically used for controller URLs;
+it is not supposed to be used for JSP URLs - use logical view names there
+
