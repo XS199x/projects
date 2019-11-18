@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scala.Tuple2;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -28,8 +27,8 @@ import java.util.regex.Pattern;
  * @author
  */
 @Service
-public class SparkTestService {
-	private static final Logger logger = LoggerFactory.getLogger(SparkTestService.class);
+public class SparkDemoService {
+	private static final Logger logger = LoggerFactory.getLogger(SparkDemoService.class);
 	
 	private static final Pattern SPACE = Pattern.compile(" ");
 	

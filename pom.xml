@@ -12,6 +12,7 @@
         <module>mock_server</module>
         <module>quartz_req</module>
         <module>test_spring</module>
+        <module>springweb</module>
     </modules>
 
 </project>

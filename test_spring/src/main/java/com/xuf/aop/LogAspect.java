@@ -5,6 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author xufan
@@ -18,7 +19,7 @@ public class LogAspect {
 		System.out.println("************************LogAspect*************************");
 	}
 	
-	@Pointcut("execution(* com.xuf.controller..*(..))")
+	@Pointcut("execution(* com.xuf.service.*.*(..))")
 	public void test(){
 	}
 	

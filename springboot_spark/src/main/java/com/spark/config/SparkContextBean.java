@@ -7,10 +7,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author
+ */
 @Configuration
 @ConfigurationProperties(prefix = "spark")
 public class SparkContextBean {
-
+	
 	private String sparkHome = ".";
 	
 	private String appName = "sparkTest";
@@ -19,14 +22,14 @@ public class SparkContextBean {
 	
 	@Bean
 	@ConditionalOnMissingBean(SparkConf.class)
-	public SparkConf sparkConf() throws Exception{
+	public SparkConf sparkConf() {
 		SparkConf conf = new SparkConf().setAppName(appName).setMaster(master);
 		return conf;
 	}
 	
 	@Bean
 	@ConditionalOnMissingBean(JavaSparkContext.class)
-	public JavaSparkContext javaSparkContext() throws Exception {
+	public JavaSparkContext javaSparkContext() {
 		return new JavaSparkContext(sparkConf());
 	}
 	

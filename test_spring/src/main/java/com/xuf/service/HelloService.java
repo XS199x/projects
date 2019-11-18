@@ -15,6 +15,6 @@ public class HelloService {
 	public void sayHello(){
 		System.out.println("hello"+personService.getName());
 		
-		FileUtil.pdf2png("C:\\Users\\xufan\\Desktop","Python3简明教程(中文版)","png");
+//		FileUtil.pdf2png("C:\\Users\\xufan\\Desktop","Python3简明教程(中文版)","png");
 	}
 }

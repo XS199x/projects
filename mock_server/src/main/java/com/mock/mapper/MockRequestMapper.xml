@@ -4,16 +4,15 @@
 
     <select id="getMockRequestByRouteUrl" resultType="com.mock.entity.MockInterfaceData">
         SELECT
-        id,name,description,routeurl as routeUrl,
-        requestdetail as requestDetail,enabledstatus as enabledStatus
+        id,name,description,routeUrl,requestDetail,enabledStatus
         FROM
         mock_server_interface
         WHERE
-        routeurl = #{routeUrl}
+        routeUrl = #{routeUrl}
     </select>
 
     <insert id="insertMockRequest">
-        insert into mock_server_interface (name,description,routeurl,requestdetail)
+        insert into mock_server_interface (name,description,routeUrl,requestDetail)
         values (#{name},#{description}, #{routeUrl}, #{requestDetail})
     </insert>
 

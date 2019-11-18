@@ -7,7 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 自定义接收streaming类
+ * @**
+ * @Description:  自定义接收streaming类
+ * @Param:
+ * @return:
+ * @Author: xufan
+ * @Date: 2019/11/13
  */
 public class CustomReceiver extends Receiver<String> {
 	
